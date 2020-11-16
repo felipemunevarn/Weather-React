@@ -9,7 +9,7 @@ export default function Card ({min, max, name, img, onClose, id}) {
             <button onClick={onClose} className="btn btn-sm btn-danger">X</button>
         </div>
         <div className="card-body">
-          <Link to={`/ciudad/${id}`} >
+          <Link to={`/Weather-React/ciudad/${id}`} >
             <h5 className="card-title">{name}</h5>
           </Link>
           <div className="row">
