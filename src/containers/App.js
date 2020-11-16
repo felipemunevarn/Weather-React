@@ -100,7 +100,7 @@ function App() {
         /> }              
       />
       <Route  
-        exact path='/ciudad/:ciudadId'
+        exact path='/Weather-React/ciudad/:ciudadId'
         render={({match}) => <Ciudad
           city={onFilter(match.params.ciudadId)}
         />}
