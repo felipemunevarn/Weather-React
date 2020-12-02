@@ -15,7 +15,7 @@ export default function Cards({cities, onClose}) {
           onClose={() => onClose(c.id)}
           id={c.id}
           country={c.country}
-          units={c.units}
+          symbol={c.symbol}
         /> )}
     </div>
   );
