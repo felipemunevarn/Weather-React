@@ -7,10 +7,11 @@ import Cards from '../components/Cards.jsx';
 import About from '../components/About.jsx';
 import Ciudad from '../components/Ciudad.jsx';
 
-const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
+console.log(process.env.PUBLIC_URL);
+
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
-  // const ubate = ;
   const [cities, setCities] = useState([]);
   const [isToggled, setToggled] = useState(false);
   
@@ -30,7 +31,6 @@ function App() {
   function onSearch(ciudad) {
     var units = (isToggled === false) ? 'metric' : 'imperial';
     var symbol = (units === 'metric') ? 'C' : 'F';
-    //Llamado a la API del clima
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=${units}&appid=${apiKey}`)
       .then(r => r.json())
       .then((recurso) => {
@@ -52,7 +52,6 @@ function App() {
           };
           if(!cities.find(city => city.id === ciudad.id)){
             setCities(oldCities => [...oldCities, ciudad]);
-            //this.setState({cities: [...this.state.cities, ciudad]});
           } else { 
             alert("City already showed");
           }
@@ -74,22 +73,22 @@ function App() {
   return (
     <div className="App">
       <Route
-        path='/'
+        path={process.env.PUBLIC_URL + '/'}
         render={() => <Nav onSearch={onSearch} onChange={handleCheckboxChange}/>}
       />
       <Route
-        exact path='/about'
+        exact path={process.env.PUBLIC_URL + '/about'}
         component={About}
       />
       <Route
-        exact path='/'
+        exact path={process.env.PUBLIC_URL + '/'}
         render={() => <Cards 
           cities={cities}
           onClose={onClose}
         /> }              
       />
       <Route  
-        exact path='/ciudad/:ciudadId'
+        exact path={process.env.PUBLIC_URL + '/ciudad/:ciudadId'}
         render={({match}) => <Ciudad
           city={onFilter(match.params.ciudadId)}
         />}

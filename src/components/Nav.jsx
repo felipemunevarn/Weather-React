@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 function Nav({onSearch, onChange}) {  
   return (
     <nav className="navbar navbar-dark bg-dark">
-      <Link to='/'>
+      <Link to={process.env.PUBLIC_URL + '/'}>
         <span className="navbar-brand">          
           Weather App
         </span>
       </Link>
-      <Link to='/about'>
+      <Link to={process.env.PUBLIC_URL + '/about'}>
         <span>About</span>
       </Link>
       <Toggle onChange={onChange} />
