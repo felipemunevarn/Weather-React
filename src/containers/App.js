@@ -10,7 +10,6 @@ import Ciudad from '../components/Ciudad.jsx';
 console.log(process.env.PUBLIC_URL);
 
 // const apiKey = process.env.REACT_APP_API_KEY;
-const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 
 function App() {
   const [cities, setCities] = useState([]);
