@@ -7,9 +7,9 @@ import Cards from '../components/Cards.jsx';
 import About from '../components/About.jsx';
 import Ciudad from '../components/Ciudad.jsx';
 
-console.log(process.env.PUBLIC_URL);
-
 const apiKey = process.env.REACT_APP_API_KEY;
+
+console.log(process.env.REACT_APP_API_KEY);
 
 function App() {
   const [cities, setCities] = useState([]);
